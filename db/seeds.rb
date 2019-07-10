@@ -5,3 +5,6 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+3.times { Note.create!(body: 'Sample Task') }
+2.times { Note.create!(body: 'Sample Task') }
