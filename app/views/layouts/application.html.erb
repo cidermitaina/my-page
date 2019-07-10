@@ -1,14 +1,57 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Mypage</title>
-    <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+<head>
+  <title>Mypage</title>
+  <%= csrf_meta_tags %>
+  <script src="https://use.fontawesome.com/releases/v5.0.0/js/all.js"></script>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_pack_tag 'menu' %>
+  </script>
+</head>
 
-  <body>
+<body>
+  <div id="mypage"" class=" hero is-fullheight">
+    <header>
+      <nav class="navbar">
+        <div class="container">
+          <div class="navbar-brand">
+            <span class="navbar-burger burger" data-target="navbarMenu" @click="toggleMenu"
+              :class="{'is-active': isMenuActive}">
+              <span></span>
+              <span></span>
+              <span></span>
+            </span>
+          </div>
+          <div id="navbarMenu" class="navbar-menu" :class="{'is-active': isMenuActive}">
+            <div class="navbar-end">
+              <div class="tabs is-one-quarter-desktop is-right ">
+                <ul>
+                  <li @click="closeMenu">
+                    <a href="/">Top</a>
+                  </li>
+                  <li @click="closeMenu">
+                    <a href="/about">About</a>
+                  </li>
+                  <li @click="closeMenu">
+                    <a href="/note"">Note</a>
+                  </li>
+                  <li @click=" closeMenu">
+                      <a href="">Api</a>
+                  </li>
+                  <li @click="closeMenu">
+                    <a href="">Contact</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
     <%= yield %>
-  </body>
+  </div>
+</body>
+
 </html>
