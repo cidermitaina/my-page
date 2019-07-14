@@ -20,7 +20,7 @@ class ContactsController < ApplicationController
   def thanks
     # メール送信
     @contact = Contact.new(contact_params)
-    ContactMailer.received_email(@contact).deliver
+    ContactMailer.contact_mail(@contact).deliver
 
     # 完了画面を表示
     render :action => 'thanks'
