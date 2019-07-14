@@ -1,4 +1,11 @@
-Rails.application.routes.draw do
+Rails.application.routes.draw do   
+
+  get 'contact' => 'contacts#index'
+
+  post 'contact/confirm' => 'contacts#confirm'
+
+  post 'contact/thanks' => 'contacts#thanks'
+
   root to: "home#top"
   get "about" => "home#about"
   get "note" => "note#index"
